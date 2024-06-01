@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground-rgb: 255, 255, 255;
+      --background-start-rgb: 0, 0, 0;
+      --background-end-rgb: 0, 0, 0;
+    }
+  }
+
+  body {
+    font-family: "Manrope", sans-serif;
+    color: rgb(var(--foreground-rgb));
+    background: transparent;
+ }
+  @layer utilities {
+    .text-balance {
+      text-wrap: balance;
+    }
+  }
+  .ev-tab-num{
+    position: relative;
+    font-size: 11px;
+    top: -3px;
+  }
+/* Loader-related style */
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; 
+  }  
+
+  #charger-path {
+    stroke: rgb(0, 0, 0);
+    stroke-width: 1px; 
+    stroke-dasharray: 500;
+    stroke-dashoffset: 0;
+    animation: gradientFill 4s linear forwards, hideStroke 0.5s 4s forwards;
+  }
+  .ev-read-more{
+    width: 40vh;
+  }
+
+
+  @keyframes gradientFill {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 500;
+    }
+  }
+  @keyframes hideStroke {
+    from {
+        stroke-opacity: 1;
+    }
+    to {
+        stroke-opacity: 0;
+    }
+  }
+
+  @keyframes slideInFromBottom {
+    from {
+        transform: translateY(50%);
+    }
+    to {
+        transform: translateY(0);
+    }
+  }
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
+
+/* Add opacity 0 for animation effect */
+.ev-left-icons>span,
+.ev-right-icons>div{
+  opacity: 0;
+}
+
+/* styles/globals.css */
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background: #ccc;
+  border: 1px solid #000;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after{
+  color: white !important;
+  font-size: 20px !important;
+}
+.swiper-button-next,
+.swiper-button-prev{
+  position: absolute !important;
+  bottom: 5% !important;
+  top: auto !important;
+}
+.swiper-button-next{
+  right: 45% !important;
+}
+.swiper-button-prev{
+  left: 45% !important;
+}
+/* End Loader-related style */
+
