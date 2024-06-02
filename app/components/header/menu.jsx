@@ -17,19 +17,19 @@ function Menu({activeSection}) {
   return (
 
           <div ref={evMenuRef} className="ev-menu-links flex space-x-4 opacity-0">
-            <Link className={`px-4 py-1 border border-1 rounded-full font-bold  ${activeSection === 'ev-about' ? 'border-ev-black-default text-ev-black-default' : 'border-ev-black-lighter text-ev-black-lighter'}`} href="#ev-about">
+            <Link className={`px-4 py-1 border border-1 rounded-full font-bold  ${activeSection === 'ev-about' ? 'border-purple-deep text-purple-deep' : 'border-ev-black-lighter text-ev-black-lighter'}`} href="#ev-about">
               <sup className='ev-tab-num mr-1'>01</sup>
               about
             </Link>
-            <Link className={`px-4 py-1 border border-1 rounded-full font-bold  ${activeSection === 'ev-services' ? 'border-ev-black-default text-ev-black-default' : 'border-ev-black-lighter text-ev-black-lighter'}`} href="#ev-home">
+            <Link className={`px-4 py-1 border border-1 rounded-full font-bold  ${activeSection === 'ev-services' ? 'border-purple-deep text-purple-deep' : 'border-ev-black-lighter text-ev-black-lighter'}`} href="#ev-home">
               <sup className='ev-tab-num mr-1'>02</sup>
               services
             </Link>
-            <Link className={`px-4 py-1 border border-1 rounded-full font-bold  ${activeSection === 'ev-sustainability' ? 'border-ev-black-default text-ev-black-default' : 'border-ev-black-lighter text-ev-black-lighter'}`} href="#ev-contact">
+            <Link className={`px-4 py-1 border border-1 rounded-full font-bold  ${activeSection === 'ev-sustainability' ? 'border-purple-deep text-purple-deep' : 'border-ev-black-lighter text-ev-black-lighter'}`} href="#ev-contact">
               <sup className='ev-tab-num mr-1'>03</sup>
               sustainability
             </Link>
-            <Link className={`px-4 py-1 border border-1 rounded-full font-bold  ${activeSection === 'ev-features' ? 'border-ev-black-default text-ev-black-default' : 'border-ev-black-lighter text-ev-black-lighter'}`} href="#ev-contact">
+            <Link className={`px-4 py-1 border border-1 rounded-full font-bold  ${activeSection === 'ev-features' ? 'border-purple-deep text-purple-deep' : 'border-ev-black-lighter text-ev-black-lighter'}`} href="#ev-contact">
               <sup className='ev-tab-num mr-1'>04</sup>
               features & benefits
             </Link>

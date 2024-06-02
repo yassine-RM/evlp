@@ -19,7 +19,10 @@ module.exports = {
         }
       },
       colors: {
-        cian: '#00ffff',
+        cian: {
+          deep:'#00ffff',
+          light:'#b4f8f7',
+        },
         purple: {
           deep: '#9400ff',
           light: '#decbff'
@@ -29,7 +32,7 @@ module.exports = {
         },
         'ev-black':{
           default:'#000',
-          lighter:'#00000030',
+          lighter:'#00000085',
 
         }
       },
