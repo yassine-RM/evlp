@@ -1,5 +1,8 @@
 
 import React, { useRef, useEffect } from 'react';
+import AboutLeft from './AboutLeft';
+import AboutRight from './AboutRight';
+import AboutText from './AboutText';
 import Image from 'next/image';
 import Arrow from '../../assets/inside-text-arrow.png';
 import evEnergy from '../../assets/ev-energy.png';
@@ -46,7 +49,7 @@ const Page = () => {
 
   return (
 
-      <div ref={aboutSection} id="ev-about" className="min-h-screen bg-light">
+      <div ref={aboutSection} id="ev-about" className="min-h-screen bg-light flex flex-col justify-evenly align-middle">
               <div className="about-title justify-center">
                   <h1 ref={aboutHeadingRef} className="text-black text-center text-4xl py-5 mt-10">
                     <div className="flex justify-center gap-2 items-center">
@@ -66,6 +69,11 @@ const Page = () => {
                       &nbsp;efficient.
                     </div>
                   </h1>
+              </div>
+              <div className='aboutMainContent flex relative'>
+                    <AboutLeft />
+                    <AboutRight />
+                    <AboutText />
               </div>
       </div>
   
