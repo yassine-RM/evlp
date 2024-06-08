@@ -9,9 +9,11 @@ import { TfiWorld } from "react-icons/tfi";
 import { BiSupport } from "react-icons/bi";
 import { SiMongodb } from "react-icons/si";
 import useIntersectionObserver from '@/app/hooks/UseIntersectionObserver';
+import electricCar0 from "@/app/assets/electric-car0.png";
 
 
 function Index() {
+  const evServicesTopImg = useRef(null);
   const evServicesScrollRef = useRef(null);
   const evServicesTitleRef = useRef(null);
   const evServicesSubTitleRef = useRef(null);
@@ -32,6 +34,15 @@ function Index() {
 
   useEffect(() => {
     if (isIntersecting) {
+      gsap.to(
+        evServicesTopImg.current,
+        {
+          width: "100%",
+          height: "300px",
+          x: "0",
+          duration: 1
+        }
+      );
       gsap.fromTo(
         evServicesTitleRef.current.querySelectorAll('.letter'),
         { opacity: 0, y: 50 },
@@ -42,6 +53,22 @@ function Index() {
         { opacity: 0, y: 50 },
         { opacity: 1, y: 0, duration: 1 }
       );
+      gsap.fromTo(
+        evServicesTopImg.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1, delay:1,onComplete: () => {
+            gsap.to(
+              evServicesTopImg.current,
+              {
+                width: "40%",
+                height: "400px",
+                x: "70%",
+                duration: 1
+              }
+            );
+        } },
+        
+      );
       gsap.fromTo(evServicesScrollRef.current, { opacity: 0, x: 400 }, { opacity: 1, x: 200, duration: 4 });
     }
   }, [isIntersecting]);
@@ -50,7 +77,7 @@ function Index() {
   }, []);
   
   return (
-    <div id='ev-services' className='min-h-screen bg-light'>
+    <div id='ev-services' className='min-h-screen bg-light relative'>
       <div className="ev-services-top">
           <h1 ref={evServicesTitleRef} className="ev-title text-black text-center text-5xl py-5 mt-10">
             {splitText('What we offer')}
@@ -86,7 +113,14 @@ function Index() {
               <SiMongodb className='bg-white p-1 rounded-full w-[25px] h-auto'  /> sustainability
             </ScrollItem>
       </div>
-      <div className="ev-services-body">
+      <div className="ev-services-body mt-48 mt">
+
+      <img
+        ref={evServicesTopImg}
+        src={electricCar0.src}
+        className="block w-full object-cover rounded-3xl w-full h-60"
+        alt={`Slide ${electricCar0.src}`}
+      />
         
       </div>
     </div>
